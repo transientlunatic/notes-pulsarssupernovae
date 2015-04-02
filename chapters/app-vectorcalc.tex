@@ -1,0 +1,54 @@
+\section{Vector Triple Product}
+\label{sec:vect-triple-prod}
+
+Consider the expression 
+\[ \vec{v} \cp \qty( \nabla \cp \vec{v} ) = 
+   \nabla ( \vec{v} \dotproduct \vec{v}) 
+ - \vec{v} (\nabla \dotproduct \vec{v}) \]
+which is better seen in Einstein notation:
+\begin{align*}
+  \vec{v} \cp (\nabla \cp \vec{v}) &= \epsilon_{mli} v_l \epsilon_{ijk} \partial_j v_k \\
+&= \epsilon_{mil} \epsilon_{ijk} v_l \partial_j v_k \\
+&= - \epsilon_{ijk} \epsilon_{mli} v_l \partial_j v_k \\
+&= - (\delta_{lj} \delta_{ik} - \delta_{lk} \delta_{ij}) v_l \partial_j v_k\\
+&= \partial_i v_l v_l - v_i \partial_l v_l \\
+&= \grad v^2 - \vec{v} (\div\vec{v}) \\
+\partial_i v_l v_l &= v_j \partial_i v_i + v_i \partial_j v_j \\
+&= \partial_i v_i v_j + \partial_j v_i v_j \\
+&= 2 \partial_i v_i v_j
+\end{align*}
+
+\section{The method of characteristics}
+\label{sec:meth-char}
+
+Consider a function, $F(x_1, x_2, \dots, x_N)$ of $N$ variables, and a first-order
+partial differential equation of the form
+\[ a_1 \pdv{F}{x_1} + a_2 \pdv{F}{x_2} + \dots + a_N \pdv{F}{x_N} =
+0 \] Where $a_1, a_2, \dots, a_N$ are functions of $x_1, x_2, \dots,
+x_N$, but not of $F$. It is possible to find a solution to this
+equation by considering the system of ordinary differential equations
+\[ \dv{x_1}{a_1} = \dv{x_2}{a_2} = \dots = \dv{x_N}{a_N} \] Given
+suitable boundary conditions for $F$ it is possible to integrate the
+system of ODEs to find the solution of $F$.
+
+\begin{example}
+  Consider 
+  \[ \pdv{v}{t} + v_0 \pdv{v}{x} = 0 \] where $v(x,t)$ is some unknown
+  function, and $v(x,0) = \exp(-x^2)$, and $v_0$ is a
+  constant. Following the method of characteristics,
+  \[ \frac{\dd{t}}{1} = \frac{\dd{x}}{v_0} \implies \int_{x_0}^x
+  \dd{x} = v_0 \int_0^t \dd{t} \implies x = x_0 + v_0 t \] for $x_0$ a
+  constant which defines $x$ and which characteristic is used at
+  $t=0$, so \[ x_0 = x - v_0 t \] The general solution is an arbitrary
+  function of $x_0$, and hence an arbitrary function of $x-v_0 t$. The
+  choice of function is determined by boundary conditions.
+Taking the initial condition $v(x,0) = \exp(-x^2)$ we find
+\[ v(x,t) = \exp(-(x-v_0 t)^2) \] This solution implies that the
+initial waveform moves to the right when $v_0$ is positive.
+\end{example}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 

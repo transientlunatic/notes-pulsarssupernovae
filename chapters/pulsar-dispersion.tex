@@ -1,0 +1,207 @@
+The Galaxy is filled with a tenuous plasma, the interstellar medium,
+which affects photons which travel through it. In normal observations
+this effect isn't visible, since the majority of sources emit light
+continuously, but for pulsars it is an important effect, and one which
+must be corrected.
+
+\section{Propagation of light in a plasma}
+\label{sec:prop-light-plasma}
+
+Consider a wave of angular frequency $\omega$, with the electric
+field, with amplitude $E$, described by
+\begin{equation}
+  \label{eq:100}
+  E = E_0 \exp(i \omega t)
+\end{equation}
+which propagates in a plasma of electron number density
+$n~e$. Assuming that the protons are quasi-stationary, the electrons
+rotate about them as
+\[ x = x_0 \exp(i \omega t) \]
+with an equation of motion
+\begin{equation}
+  \label{eq:101}
+  E e = m~e \ddot{x} = -m~e \omega^2 x 
+\end{equation}
+Charge separation appears as a bulk polarisation, defining the
+relative permittivity, $\epsilon~r$, of the plasma,
+\begin{equation}
+  \label{eq:102}
+  P = n~e p = (\epsilon~r -1) \epsilon_0 E
+\end{equation} 
+for $p = xe$ the dipole moment of a proton-electron pair. Then, using
+the equation of motion,
+\begin{equation}
+  \label{eq:103}
+  \epsilon~r = 1 - \frac{n~e e^2}{\epsilon_0 m~e \omega^2}
+\end{equation}
+and the refractive index of the plasma is then
+\begin{equation}
+  \label{eq:104}
+  \eta = \epsilon~r^{1/2} = \qty( 1 - \frac{f~p^2}{f^2} )
+\end{equation}
+where $f~p$ is the plasma frequency, 
+\[f~p = \frac{1}{2 \pi} \qty( \frac{n~e e^2}{\epsilon_0 m~e})^{1/2}
+\approx 9 \qty( \frac{n~e}{1\,\centi\meter^{-3}})^{1/2}. \] This is
+the natural oscillatory frequency of the plasma. This leads to the
+conclusion that for
+\begin{itemize}
+\item $f<f~p$ there are no propagating modes of EM radiation.
+\item $f>f~p$ the group velocity is $c \eta$ and the phase velocity is
+  $c/\eta$.
+\end{itemize}
+Local spatial variations in the density of the plasma lead to
+scattering of waves as they propagate.
+
+\section{Dispersion}
+\label{sec:dispersion}
+
+Since the refractive index of the ISM is frequency dependent it
+follows that the resultant time delay is also frequency dependent,
+\begin{equation}
+  \label{eq:105}
+  t = \int_0^D \frac{\dd{z}}{\eta(z) c}
+\end{equation}
+where $D$ is the distance along the line-of-sight to the source. So
+long as $f~p \ll f$, this delay is
+\begin{equation}
+  \label{eq:106}
+  \tau~D = \frac{e^2}{8 \pi^2 \epsilon_0 m~e c} \frac{1}{f^2} \int_0^D n~e(x) \dd{x},
+\end{equation}
+which is more normally expressed
+\providecommand{\DM}{\operatorname{DM}}
+\begin{equation}
+  \label{eq:107}
+  \tau~D = 4.15\e{3} \frac{1}{f^2~{\mega\hertz}} \DM\,\second
+\end{equation}
+where $\DM = \int_0^D n~e(x) \dd{x~{pc}}$ is the dispersion
+measure. Dispersion of radio signals stretches the pulse out into
+chirps across the band-width of the pulsar, with the highest
+frequencies arriving earliest.
+
+Pulsars allow the $\DM$ to be measured, and so provide a means to
+measure the electron density throughout the Galaxy. This reveals the
+typical density to be $n~e \approx 0.03\,\centi\meter^{-3}$.
+
+\begin{table*}
+  \centering
+  \begin{tabular}{lllll}
+    \toprule
+    Component           & Temperature [$\kelvin$] & Volume fraction & Number density [$\centi\meter^{-3}$] & Species              \\ 
+    \midrule
+    Molecular clouds    & $20$--$50$              & $<1 \%$         & $10^3$--$10^6$                       & Molecular hydrogen   \\
+    Cold neutral medium & $50$--$100$             & $1\%$--$5\%$    & $1$--$10^3$                          & Atomic hydrogen      \\
+Warm neutral medium     & $10^3$--$10^4$          & $10\%$--$20\%$  & $10^{-1}$--$10$                      & Atomic hydrogen      \\
+\midrule
+Warm ionised medium     & $10^3$--$10^4$          & $20\%$--$50\%$  & $10^{-2}$                            & Electrons \& Protons \\
+H\,II regions           & $10^4$                  & $10\%$          & $10^2$--$10^4$                       & Electrons \& protons \\
+Hot ionised medium      & $10^6$--$10^7$          & $30\%$--$70\%$  & $10^{-4}$--$10^{-2}$                 & Electrons, protons, \& ions \\
+    \bottomrule
+  \end{tabular}
+  \caption{The Interstellar medium}
+  \label{tab:ism}
+\end{table*}
+
+\section{Interstellar Scintillation}
+\label{sec:interst-scint}
+
+In addition to dispersion it is possible to observe variations on the
+scale of minutes in apparent pulse brightness; a process known as
+interstellar scintillation. This is a result of the variations caused
+by the movement of denser blobs of interstellar medium passing into
+the line of sight.
+
+A plasma with variations in the refractive index (often around $0.1\%$
+in the ISM) will distort a planar wavefront. The excess refractive
+index due to an electron density at $r$ is
+\begin{equation}
+  \label{eq:108}
+  \Delta \eta(r) = \frac{e^2}{8 \pi^2 \epsilon_0 m~e} \frac{\Delta n~e(r)}{f^2} = \frac{r~e}{2 \pi} \lambda^2 \Delta n~e(r)
+\end{equation}
+for $r~e$ the classical radius of the electron.
+
+This plasma can be approximated as being confined to a thin screen,
+and composed of randomly placed, identical blobs of excess plasma
+density. Each has a diameter of $a$, and the screen has thickness
+$D$. Thus we expect a photon to encounter $D/a$ blobs, on average,
+with an rms variation of $\sqrt{D/a}$. Each blob introduces a phase
+change of $2\pi \Delta \eta a/\lambda$, so the perturbations across
+the wavefront will be
+\begin{equation}
+  \label{eq:109}
+  \Delta \Phi = r~e \lambda (Da)^{\half} \Delta n~e
+\end{equation}
+If $a \gg \lambda$ the blobs will refract the rays passing through
+them, with a scattering angle
+\begin{equation}
+  \label{eq:110}
+  \theta~s \approx \frac{\Phi}{2 \pi} \frac{\lambda}{a} = \frac{1}{2 \pi} r~e \lambda^2 \qty( \frac{D}{a} )^{\half} \Delta n~e
+\end{equation}
+and so a point source will appear to be broadened. 
+
+Different rays from the blurred source will take differing amounts of
+time to reach the observer, and so a pulse will be broadened. If the
+distance from the screen to the observer is $z$ this broadening,
+$\tau~s$ is
+\begin{equation}
+  \label{eq:111}
+  \tau~s = \frac{z}{c} (1-\cos(\theta~s) ) \approx \frac{z \theta~s^2}{2 c}
+\end{equation}
+if $\theta~s \proptp \lambda^2$ it follows that $\tau~s \propto
+\lambda^4$. Thus a thin pulse is broadened to an exponential decay
+with an intensity profile
+\[ I(t) \propto \exp(- \frac{t}{\tau~s} ) \] multiple scattering
+events smoothes this.
+ 
+The full evolution of the wave is described by the Fresnel diffraction
+formula,
+\begin{equation}
+  \label{eq:113}
+  \Psi(R) = \frac{e^{-i \pi/2}}{ 2 \pi r^2~F} \iint \exp( i \phi(r) + i \frac{\abs{r-R}^2}{2 r~F^2} ) \dd[2]{r} 
+\end{equation}
+for $r~F$ the Fresnel scale,
+\[ r~F = \qty( \frac{\lambda z}{2 \pi} )^{\half} \] This integral is,
+in principle, over the whole screen, but in practice the effect in the
+first Fresnel scale unit dominates. If the disturbance is small $\ll
+\pi$ the scattering is described as \emph{weak scattering}; if there
+are large variations it is \emph{strong scattering}.
+
+In the strong scattering regime the scattering generates a large
+variation over the Fresnel scale, demanding a new phase-stationary
+scale, $r_0$. Each blob diffracts radiation by the scattering angle,
+$\theta~s \approx 2 \pi \lambda / r~{diff}$, with $r~{diff} = r_0$
+being the diffracive scale. The observer sees the radiation from the
+blobs on a scale of $r~{ref}= z\theta~s$, the refractive scale.
+
+These are related to the Fresnel radius as $r~{diff} r~{ref} =
+r^2~F$. In the weak scattering regime the effect is limited to a
+single scintillation mode rather than diffraction and refraction.
+
+If the radio source is sufficiently small and band-limited the phase
+screen will be illuminated by spatially coherent radiation, and the
+overlapping scattered waves will produce a strong and random
+interference pattern with a scale size of $r~{diff}$. In order to
+maintain this interference pattern it is necessary to restrict the
+bandwidth to the inverse of the broadening time,
+\[ \Delta f \approx \frac{1}{2 \pi \tau~s} \] which is the
+decorrelation bandwidth of the scintillations.
+
+\section{De-dispersion}
+\label{sec:de-dispersion}
+
+In order to resolve a pulse profile it is necessary to remove the
+effects of dispersion from the signal across the passband (the set of
+wavelengths which are recorded by the radio telescope). In order to do
+this the passband is split into smaller sets of wavelengths, and
+passed through a bank of filters to realign the passband, producing a
+coherent pulse. This is more normally done inn software now, after
+first digitising the passband. However, the digitisation of the
+passband allows a more sensitive method to be used, coherent
+de-dispersion.
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 
