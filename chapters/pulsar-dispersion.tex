@@ -198,7 +198,75 @@ first digitising the passband. However, the digitisation of the
 passband allows a more sensitive method to be used, coherent
 de-dispersion.
 
+In coherent de-dispersion the raw voltages from the telescope are
+mixed with local oscillators to form complex base-band signals, and
+then sampled. The ISM produces a chirp function in the pulse, so this
+can be corrected by calculating the inverse chirp, and convolving the
+recorded timeseries with it. 
 
+As a signal travels through the plasma of the interstellar medium its
+group velocity becomes a function of the signal's frequency, as
+described in section \ref{sec:dispersion}, causing the signal to
+arrive at a time later than would be otherwise expected. we expect
+\cite[p.~87]{2004hpa..book.....L}
+\begin{equation}
+  \label{eq:116}
+  k(f) = \frac{2 \pi}{c} \mu f = \frac{2 \pi}{c} f \sqrt{1 - \frac{f_{\rm p}^2}{f^2} \mp \frac{f_{\rm p}^2 f_{\rm B}}{f^3}}
+\end{equation}
+with $f_{\rm p}$ the plasma frequency,
+\[ f_{\rm p} = \sqrt{\frac{e^2 n_{\rm e}}{\pi m_{\rm e}}} \approx 8.5\,
+\kilo\hertz \qty( \frac{n_{\rm e}}{\centi\meter^{-3}})^{\frac{1}{2}}\]
+and $f_{\rm B}$ the cyclotron frequency due to the galactic magnetic
+field along the line of sight,
+\[ f_{\rm B} = \frac{eB_{\parallel}}{2 \pi m_{\rm e} c} \] we expect
+$f_{\rm B} \sim 3\, \hertz$ for the ISM.  For the case in equation
+(\ref{eq:7}), we have $f \to f_0 + f$, so
+\begin{align}
+\label{eq:115}
+    k(f_0 + f) &= \frac{2 \pi}{c} \mu (f_0 +f) \\ 
+\label{eq:117}
+&= \frac{2 \pi}{c} (f+f_0) \sqrt{1 - \frac{f_{\rm p}^2}{(f_0+f)^2}) \mp \frac{f_{\rm p}^2 f_{\rm B}}{(f_0+f)^3}}
+\end{align}
+For the ISM we expect $f_{\rm p} \sim 2\, \kilo\hertz$, so when the
+observing frequency is greater than around $100\, \mega\hertz$ the last
+two terms of equation (\ref{eq:115}) have magnitudes of $10^{-10}$ and
+$10^{-18}$, and as such it can be approximated by the first terms of a
+Taylor expansion,
+\begin{equation}
+  \label{eq:118}
+  k(f_0+f) \approx \frac{2 \pi}{c} (f_0 + f) \qty[ 1 - \frac{f_{\rm p}^2}{2(f_0+f)^2}]
+\end{equation}
+Putting this back into the transfer function,
+\begin{equation}
+  \label{eq:119}
+  H(f_0 + f) = \exp(i \frac{2 \pi}{c} d \qty(f_0 + f - \frac{f_{\rm p}^2}{2(f_0+f)}) )
+\end{equation}
+Using the identity
+\begin{equation}
+  \label{eq:120}
+  \frac{1}{f+f_0} = \frac{1}{f_0} - \frac{f}{f_0^2} + \frac{f^2}{(f_0+f)f_0^2}
+\end{equation}
+the final function describing the transfer function is then
+\begin{align}
+  \label{eq:121}
+  H(f_0+f) = \exp \bigg( - i \frac{2 \pi}{c} d \bigg[ & \qty( f_0 - \frac{f_{\rm p}^2}{2 f_0}) \nonumber\\
++ & \qty(1 + \frac{f_{\rm p}^2}{f_0^2})f \nonumber\\
+ -& \frac{f_{\rm p}^2}{2(f+f_0)f_0^2} \bigg] \bigg) 
+\end{align}
+The last term causes rotations in the $f^2$ band, and these are what
+must be ``unwound'' to retrieve the pulsar signal. Thus, the relevant
+transfer function becomes 
+\begin{equation}
+  \label{eq:122}
+  H(f_0 +f) = \exp( + i \frac{2 \pi}{c} d \frac{f_{\rm p}^2}{2(f+f_0)f_0^2}f^2)
+\end{equation}
+Defining the dispersion constant, 
+\[ \mathcal{D} = \frac{f_{\rm p}^2}{2 c n_{\rm e}} \] 
+then the chirp has the functional form
+\begin{equation}
+  \label{eq:16}
+  H(f_0 + f) =\exp( i \frac{2 \pi \mathcal{D}}{(f_0+f)f_0^2} {\rm DM} f^2 )
+\end{equation}
 
 
 %%% Local Variables: 
