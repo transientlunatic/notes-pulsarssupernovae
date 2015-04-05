@@ -5,10 +5,14 @@
 \usepackage{tabularx}
 \usepackage{danielphysics}
 \usepackage{tensor}
+\usepackage{multirow, mhchem}
 
 \title{Pulsars and Supernovae}
 \author{Daniel Williams}
 
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,fill=white,draw,inner sep=2pt] (char) {#1};}}
 
 \providecommand{\Lag}{\mathcal{L}} %The Lagrangian
 \providecommand{\Op}[1]{\mathrm{\hat{#1}}}  %A Quantum mechanical operator
@@ -72,6 +76,11 @@
 
 \input{chapters/fluidmechanics}
 
+\chapter{Supernovae}
+\label{cha:supernovae}
+\input{chapters/supernovae}
+
+
 \part{Pulsars}
 \label{part:pulsars}
 
@@ -108,7 +117,7 @@
 \input{chapters/app-vectorcalc}
 
 \bibliographystyle{authordate1}
-\bibliography{bibliography/pulsars}
+\bibliography{bibliography/pulsars,bibliography/supernova}
 \nocite{*}
 
 
