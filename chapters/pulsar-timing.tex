@@ -1,0 +1,115 @@
+Pulsar surveys, where special attention is paid to sources which The
+majority of pulsars are now discovered as part of systematic have
+rapid and periodic variations in brightness temperature. These surveys
+require high temporal resolution, and large collectors, so the
+telescopes best suited are instruments like the Parkes telescope,
+Arecibo, or Greenbank. As a result of the high resolution most surveys
+are limited by the computational power available to the endeavour.
+
+In general any pulsar, when found, will have unknown dispersion, sky
+location, period, and pulse shape. Moreover, if the pulsar is in a
+binary system there may be additional delays and shifts originating at
+the pulsar's locality. If each patch of sky is observed only for a
+short time then the dispersion, period, and pulse shape are the
+significant contributors to the detection probability.
+
+\section{Period search}
+\label{sec:period-search}
+
+The simples means of identifying the period of a pulsar signal is to
+perform a Fast Fourier Transform (FFT) on the data, which concentrates
+the power from the pulses into a small number of frequency bins. This
+method is effective at determining the rough period of the pulsar. 
+
+Once the period of the pulsar is identified the signal is \emph{phase
+  folded}, whereby the signal from each point in the pulse phase are
+added together over the entire observation period. If the period is
+known precisely then the appropriate bin can be immediately identified
+for each timestamp, and the integrated pulse profile will be
+returned. If the period is poorly known then the pulse profile
+returned by this process will be smeared out. By using variational
+principles it is possible to run an algorithm to determine the optimal
+fit to the period using this method.
+
+The correct de-disperion must also be found by trial and error, so
+each timeseries is corrected for a trial DM, which is searched for
+harmonics before a new trial DM is tested.
+
+\section{Timing}
+\label{sec:timing}
+
+Once a pulsar is observed it can be timed; the times-of-arrival of
+each pulse can be compared to the pulses of an atomic clock. We
+measure the raw TOAs topocentrically, but it is conventional to
+convert these to the times as they would be measured at the solar
+system barycentre, so that they are measured in the nearest thing we
+have to an inertial reference frame. General relativity also affects
+the timings from the atomic clocks, so best accuracies in the timings
+are around $100\,\nano\second$.
+
+\subsection{The Earth's orbit}
+\label{sec:earths-orbit}
+
+The distance between the Earth and the pulsar, and the Earth and the
+solar system barycentre (SSB) varies over the period of a year, with
+the Earth's orbital motion. Thanks to the non-planar nature of this
+delay it affects sources differently depending on their ecliptic
+coordinates in the sky. Assuming a circular orbit this delay, $t~c$,
+takes the form
+\begin{equation}
+  \label{eq:timing-3}
+  t~c = A \cos(\omega t - \lambda) \cos(\beta)
+\end{equation}
+for $\omega$ the angular velocity of the Earth, $\lambda$ the ecliptic
+longitude, and $\beta$ the ecliptic latitude of the pulsar.
+
+\section{Timing delays}
+\label{sec:timing-delays}
+
+The relation between the timings received at the telescope, $t$,
+compared to those at the SSB, $t~b$ is
+\begin{equation}
+  \label{eq:4}
+  t~b = t - \qty( {\cal D} \frac{\DM}{ \nu^2} + \Delta~{R \oplus} + \Delta~{E \oplus} + \Delta~{S \oplus} )
+\end{equation}
+with ${\cal D} \frac{\DM}{\nu^2}$ the dispersive propagation delay at
+a frequency $\nu$, $\Delta~{R \oplus}$ the Roemer delay---the time
+taken for the signal to travel across the solar system, $\Delta~{E
+  \oplus}$ is the Einstein delay, which is the dilation effect
+introduced into Earth's clocks by the mass of the solar system,
+$\Delta~{S \oplus}$ is the Shapiro delay, caused by the added
+spacetime geometry produced by the mass of the solar system.
+
+\section{Spin-down model}
+\label{sec:spin-down-model}
+
+By making individual timings of pulsars it is possible to measure
+their period's variation over time,
+\begin{equation}
+  \label{eq:114}
+  P(t) = P(t_0) + \eval{\dv{P}{t}}_{t_0} (t-t_0) + \eval{ \dv[2]{P}{t}}_{t_0} \half (t-t_0)^2 + \cdots
+\end{equation}
+The first two coefficients, P and Pdot, are found by fitting a second
+order polynomial to the pulsar timings; the higher coefficients are
+small and dominated by timing noise. Figure \ref{fig:ppdot} shows the
+P-Pdot diagram; the pulsar world's equivalent of the Herzprung-Russell
+diagram. One feature visible on this diagram is the pulsar \emph{death
+  line}, a lower limit to the spin-down luminosity, which have
+insufficient energy to fuel the acceleration process which generate
+the radio beams.
+
+\section{Parallax}
+\label{sec:parallax}
+
+While the dispersion measure can be used to estimate the distance to a
+pulsar, provided a good model of the electron density is available,
+accurate pulsar timing allows precise parallactic measurements, by
+measuring the curvature of the signal wavefront over the course of the
+Earth's orbit, which allows the radius of curvature to be
+calculated. This works best for nearby pulsars (within
+1\,\kilo\text{pc}, and for pulsars near the ecliptic.
+
+%%% Local Variables: 
+%%% mode: pdflatex
+%%% TeX-master: "../project"
+%%% End: 

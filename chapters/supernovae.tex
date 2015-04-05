@@ -1,0 +1,266 @@
+A supernova is the explosion which occurs at the end of the lifespan
+of a star, which produces a sufficient quantity of energy to outshine
+its host galaxy for a brief time. There are other mechanisms for the
+ignition of a supernova, however.
+
+\begin{table*}
+\centering
+\begin{tabular}{l ll l}
+\toprule
+Main Class                & Sub-class & Features                                                           & Mechanism                      \\ 
+\midrule
+  \multirow{3}{*}{Type I} & Ia        & Si II line.                                                        & Thermal runaway                \\
+                          & Ib        & Weak or no Si, He I line.                                          & \multirow{2}{*}{Core collapse} \\
+                          & Ic        & Weak or no Si, no He.                                              &                                \\
+\midrule
+\multirow{4}{*}{Type 2}   & II-P      & Type II spectrum, No narrow lines, light curve plateaus.           & \multirow{4}{*}{Core collapse} \\
+                          & II-L      & Type II spectrum, no narrow lines, light curve decreases linearly. &                                \\
+                          & II-n      & Type II spectrum, some narrow lines.                               &                                \\
+                          & II-b      & Spectrum changes to become Type Ib-like spectrum.                  &                                \\
+\bottomrule
+\end{tabular}
+\caption{A summary of the classifications of supernova.}
+\label{tab:supernova-category}
+\end{table*}
+
+There are a number of different classifications of supernovae (these
+are summarised in table \ref{tab:supernova-category}), with the
+subdivisions made based on spectral properties of the explosion.
+
+\section{Type I }
+\label{sec:type-i-}
+
+If a supernova does not show Balmer lines from hydrogen it is
+categorised as a type I supernova, and then sub-divided based on the
+silicon and helium lines.
+
+\subsection{Type-Ia}
+\label{sec:type-ia}
+
+Type Ia supernovae show helium and silicon ion absorption lines, and
+are believed to arise as a result of mass accretion onto a white dwarf
+in a binary system. This causes the white dwarf to exceed the
+Chandrasekhar mass limit, and collapse to a neutron star. The
+consensus view, however, is that for a period of just 1000 years, when
+the white dwarf has around 99\% of the limit mass, convection occurs,
+allowing deflagration through carbon and later oxygen
+fusion. Degeneracy pressure is independent of temperature, and so the
+fusion process is prone to runaway, and Rayleigh-Taylor instability
+causes the burning surface to accelerate dramatically.
+
+A second mechanism arises in systems with two degenerate white dwarfs,
+which eventually coalesce, forming a super-Chandrasekhar star, which
+then collapses to form a neutron star.
+
+\subsection{Types-Ib and -Ic}
+\label{sec:types-ib-ic}
+
+Types-Ib and -Ic are the result of the collapse of massive stars which
+have undergone a red-giant phase, and have lost most of their outer
+layer of hydrogen and helium gas. They have a low occurrence rate
+thanks to the scarcity of massive stars in the Galaxy.
+
+\section{Type II}
+\label{sec:type-ii}
+
+Type II supernovae are the ``normal'' supernovae, for progenitors with
+8 to 40 times the mass of the Sun, and represent the result of core
+collapse, due to the inability of the progenitor to balance the
+gravitational pressure of the gas by thermodynamic pressure from the
+nuclear reactions in the core.
+
+Type IIP supernovae, which show a plateau in their lightcurves, are
+the result of the collapse of a star with a hydrogen envelope with
+$M\ge 2M_{\odot}$, whereas IIL supernovae have less massive envelopes,
+which cannot sustain the plateau.
+
+\section{Late phase evolution}
+\label{sec:late-phase-evolution}
+
+The pressure generated in the core of a star must balance the weight
+of the material composing a star to prevent collapse. In the Newtonian
+regime this is described by the relation
+\begin{equation}
+  \label{eq:126}
+  \pdv{P}{r} = - \frac{G M(r) \rho(r)}{r^2}
+\end{equation}
+for $P$ the pressure at a radius $r$ from the star's centre, and
+$\rho(r)$ the density. In polytrophic models of stars
+\[ P \propto \rho^{(n+1)/n} \]
+thus
+\begin{equation}
+  \label{eq:127}
+  \frac{P~c^3}{\rho~c^4} = 4 \pi G^3 \qty( \frac{M}{\phi} )^2
+\end{equation}
+for the central density and pressure, and $\phi$ the constant of
+proportionality,
+\begin{equation}
+  \label{eq:128}
+  \phi(n) =
+  \begin{cases}
+    4.9 & \text{ for } n=0 \\
+10.7 & \text{ for } n= 1.5 \\
+16.15 & \text{ for } n = 3 
+  \end{cases}
+\end{equation}
+
+As a star runs out of fuel for a given fusion process it will
+contract, and its temperature will increase, allowing a higher-order
+fusion process to be undertaken, pausing the contraction process,
+however, after helium burning the temperature in the star is
+sufficient to maintain a large population of thermalised electrons and
+positrons, which can annihilate to form a neutrino-antineutrino
+pair. The loss of this mass accelerates the contraction process, and
+so, while helium burning may last many years, silicon burning lasts
+only a few weeks.
+
+\section{Mass loss}
+\label{sec:mass-loss}
+
+The final evolution of a star is highly dependent upon the amount of
+mass which is lost in the late stages of its evolution, and this is
+dependent upon the star's metallicity. The mass loss is wind-driven in
+large stars, and since this has a strength proportional to the square
+root of the abundance of metals it becomes a dominant effect in very
+metallic stars. If the star loses its entire Hydrogen envelope its
+rate of mass loss can increase significantly, producing a turning
+point in figure \ref{fig:remnants}, as much smaller helium cores
+remain at the time of the star's collapse.
+
+
+\begin{figure*}
+  \centering
+  \input{figures/remnants.tex}
+  \caption{The remnants left by a variety of masses and metallicities.}
+  \label{fig:remnants}
+\end{figure*}
+
+\section{Low-mass stars}
+\label{sec:low-mass-stars}
+
+Low mass stars, with progenitor masses lower than 9 solar masses will
+shed the majority of their outer material in their red giant phase,
+leaving a Carbon-Oxygen core with a mass of 0.6 to 1.1 solar masses,
+which forms a white dwarf; a degenerate remnant supported by electron
+degeneracy pressure. This situation is illustrated in figure
+\ref{fig:remnants}: the production of a white dwarf by a star with
+mass under $<9 M_\odot$ is represented by region \circled{1}. The loss
+of mass in the late stages of the star's evolution are important, and
+a star with a mass under 11 solar masses can still, if the element
+abundances in the core are correct, form an oxygen-neon white dwarf,
+thanks to the development of a convective super-wind, and this is
+illustrated in region \circled{2}.
+
+\section{High-mass stars}
+\label{sec:high-mass-stars}
+
+In high mass stars the electrons in the core do not become degenerate
+until the final stages of the burn, and the luminosity of the star,
+which will be close to the Eddington limit, remains almost
+constant. Stars with a mass up to 100 solar masses will attempt to
+fuse iron. This process is endothermic, and so fails to provide the
+required pressure to counterbalance the star's gravitational collapse.
+The precise remnant left behind depends on a combination of the mass
+of the progenitor and its metallicity \cite{2003ApJ...591..288H}.  For
+a zero-metallicity star, up to around 40 solar masses the remnant will
+be a neutron star (figure \ref{fig:remnants}, section
+\circled{3}). Above this, but below 100 solar masses a black hole will
+form as material falls back into the core (section \circled{4}). Above
+100 solar masses the collapse leads straight to a black hole, with no
+supernova (section \circled{5}). Above 140 solar masses the star will
+suffer pair-pair pulsational instability, and no remnant will be
+produced (section \circled{6}). For extremely massive (greater than
+260 solar masses, section \circled{7}) photodisintegration becomes the
+dominant cause of the collapse, and the star becomes a black hole
+directly, as in section \circled{5}.
+
+\begin{figure*}[t]
+  \centering
+\input{figures/rhoT.tex}
+  \caption{The $\log(T)-\log(\rho)$ diagram.}
+  \label{fig:logTlogr}
+\end{figure*}
+
+\section{Collapse}
+\label{sec:collapse}
+
+If the mass of the iron core of the star exceeds the Chandrasekhar
+mass limit it will no longer be possible for a star to produce energy,
+but loses due to neutrinos still occur. As this happens electrons are
+captured by the heavy nuclei, which in turn reduces the (electron
+degeneracy) pressure, accelerating the in-fall. The temperature then
+rises rapidly, allowing the photodisintegration of the iron nuclei.
+\begin{equation}
+  \label{eq:129}
+  \gamma(100\,\mega\electronvolt) + ^{56}\ce{Fe} \to 13\, ^4\ce{He} + 4 \ce{n}
+\end{equation}
+This reaction absorbs around $2 \mega\electronvolt$ of energy per
+nucleon. At this point the core collapses in near free-fall at around
+$0.25 c$. As the process continues the temperature rises to the point
+where helium disintegrates intro protons and neutrons, and free
+protons capture free electrons to form neutrons. The collapse is
+finally halted by the neutron degeneracy pressure when the density
+reaches $10^{18}\,\kilogram/\meter^3$. This remnant is a neutron star.
+
+The formation of the neutron star produces a shockwave as the outer
+layers of the core continue to collapse, but this eventually stalls as
+a result of photodisintegration and neutrino losses. After a few
+milliseconds the gas stops expanding back outward, and the
+proto-neutron star starts accreting matter at a rate of several solar
+masses per minute. If this accretion is able to continue unabated no
+supernova occurs, and within around a second the neutron star further
+collapses into a black hole. If this does not occur within a few
+seconds, however, neutrino losses force the remnant to become a
+neutron star.
+
+\subsection{Neutrino production}
+\label{sec:neutrino-production}
+
+During the collapse around 10 percent
+($7\,\mega\electronvolt/\text{nucleon}$) of the total energy of the
+explosion is lost to nuclear processes, while only 1\% of the
+$3\e{46}\,\joule$ of gravitational energy is radiated as photons, and
+a few percent as kinetic ejecta. The vast majority of the energy is
+used to produce neutrinos. The burst of neutrinos from SN\,1987A was
+observed by SuperKamiokande, with the burst lasting 13 seconds.
+
+\section{Pair-instability supernovae}
+\label{sec:pair-inst-supern}
+
+Stars with a mass greater than 100 solar masses are still produced in
+the galaxy, but these will normally have nuclear and
+photometrically-powered pulsations which drive their mass loss. These
+are, however, suppressed in extreme Population III stars, and maintain
+most of their mass through to the end of their helium burning cycle,
+resulting in a massive helium core. If the core has a mass greater
+than 42 solar masses the star will experience pair-instability; the
+result of high-energy gamma rays in the core after carbon burning has
+completed, and this causes a pressure drop. For progenitor masses
+between 100 and 130 solar masses this results in sequence of
+disruptive pulsations which shed mass from the star until it is below
+the instability limit, but for masses in excess of this the first
+pulse will have enough energy to violently disrupt the star, producing
+an explosion. These supernovae are credited with the production of a
+nearly solar distribution of heavy elements up to zinc.
+
+\section{Implosion to explosion}
+\label{sec:implosion-explosion}
+
+In order to turn the implosive nature of a supernova into the
+explosive process which is observed energy is transferred from the
+neutrino flux to the outer layers of the star, rather than the
+shockwave produced by the formation of the neutron star. The expanding
+material from the supernova will then form a shockfront as it travels
+through the interstellar medium, however.
+
+The explosion is the main source of the supernova's light curve. An
+early peak is produced as the shock breaks through the surface of the
+gas, producing strong UV radiation; the lightcurve will then plateau
+as the hydrogen-rich envelope expands and cools and recombines. After
+this the tail of the lightcurve is driven by the radioactive decay of
+$\ce{^{56}Ni}$.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 
