@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+  \begin{axis}
+    \addplot[scatter,only marks,
+             scatter src=explicit symbolic]% 
+    table {
+      \input{data/atnf-simple.dat}
+    }; 
+  \end{axis}
+\end{tikzpicture}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 

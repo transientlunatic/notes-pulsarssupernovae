@@ -1,0 +1,35 @@
+\begin{tikzpicture}[node distance=1.5cm]
+
+	\foreach \x in {0, 1, ..., 16}
+		\draw (\x,1.2) node {\x};
+
+	\node at (15.5, -0.3) {$4.3\,\times 10^{11}$};
+	\node at (12, -0.3) {$\sim 2\,\times 10^{14}$};
+	\node at (1, -0.3) {$4.4\,\times 10^{14}$};
+	\node at (7, -0.3) {Density [g/cm$^3$]};
+	\node [fill=white] at (7, 1.2) {Radius  [km]};
+
+	\filldraw [fill=accent-red!10, draw=black, thick] (16,0) rectangle (15,1)
+	node [right=1.8cm, below=1.8cm, text width=3.5cm] {Outer crust.\\ Nuclei \& electrons.}
+	;
+
+	\filldraw [fill=accent-red!30, draw=black, thick] (15,0) rectangle (12,1)
+	node [right=3.8cm, text width=7.5cm, above=.9cm] {Inner crust. \\ Superfluid neutrons, nuclei, \& electrons.}
+	;
+
+	\filldraw [fill=accent-red!50, draw=black, thick] (12,0) rectangle (11,1)
+	node [right=1.8cm, below=1.8cm, text width=3.5cm] {Outer core. \\Normal neutrons.};	
+	;
+
+	\filldraw [fill=accent-red, draw=black, thick] (11,0) rectangle (0,1)
+	node [right=3.8cm, text width=7.5cm, above=.9cm] {Inner core. \\ Superfluid neutrons, superconducting protons, and electrons.}
+	;
+
+%\draw (0, 4) -- (16,4);
+
+\end{tikzpicture}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../project"
+%%% End: 
